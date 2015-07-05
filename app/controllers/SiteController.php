@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use Yii;
@@ -18,6 +19,7 @@ use yii\filters\AccessControl;
  */
 class SiteController extends Controller
 {
+
     /**
      * @inheritdoc
      */
@@ -84,7 +86,7 @@ class SiteController extends Controller
             return $this->goBack();
         } else {
             return $this->render('login', [
-                'model' => $model,
+                    'model' => $model,
             ]);
         }
     }
@@ -109,7 +111,7 @@ class SiteController extends Controller
             return $this->refresh();
         } else {
             return $this->render('contact', [
-                'model' => $model,
+                    'model' => $model,
             ]);
         }
     }
@@ -131,7 +133,7 @@ class SiteController extends Controller
         }
 
         return $this->render('signup', [
-            'model' => $model,
+                'model' => $model,
         ]);
     }
 
@@ -149,7 +151,7 @@ class SiteController extends Controller
         }
 
         return $this->render('requestPasswordResetToken', [
-            'model' => $model,
+                'model' => $model,
         ]);
     }
 
@@ -168,7 +170,18 @@ class SiteController extends Controller
         }
 
         return $this->render('resetPassword', [
-            'model' => $model,
+                'model' => $model,
         ]);
+    }
+
+    public function actionImsakiyah()
+    {
+        $model = new \app\models\Imsakiyah();
+        $jadwal = null;
+        // 7.004 112.425
+        if ($model->load(\Yii::$app->request->get(), '') && $model->validate()) {
+            $jadwal = $model->getImsakiyah();
+            return $this->render('imsakiyah', ['model' => $model, 'jadwal' => $jadwal]);
+        }
     }
 }
