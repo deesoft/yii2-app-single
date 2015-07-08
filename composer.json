@@ -33,6 +33,9 @@
         "process-timeout": 1800
     },
     "extra": {
+        "branch-alias": {
+            "dev-demo": "demo"
+        },
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
