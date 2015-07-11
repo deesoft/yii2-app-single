@@ -181,7 +181,7 @@ class SiteController extends Controller
         // 7.004 112.425
         if ($model->load(\Yii::$app->request->get(), '') && $model->validate()) {
             $jadwal = $model->getImsakiyah();
-            return $this->render('imsakiyah', ['model' => $model, 'jadwal' => $jadwal]);
         }
+        return $this->render('imsakiyah', ['model' => $model, 'jadwal' => $jadwal]);
     }
 }
