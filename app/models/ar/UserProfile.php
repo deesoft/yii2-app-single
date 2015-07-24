@@ -7,7 +7,7 @@ use Yii;
 /**
  * This is the model class for table "user_profile".
  *
- * @property integer $user_id
+ * @property integer $id
  * @property string $fullname
  * @property integer $photo_id
  *
@@ -34,7 +34,7 @@ class UserProfile extends \yii\db\ActiveRecord
             [['photo_id'], 'integer'],
             [['fullname'], 'string', 'max' => 255],
             [['file'], 'file'],
-            [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id'=>'id']],
+            [['id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['id']],
         ];
     }
 
@@ -44,7 +44,7 @@ class UserProfile extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'user_id' => 'User ID',
+            'id' => 'User ID',
             'fullname' => 'Fullname',
             'photo_id' => 'Photo ID',
         ];
@@ -55,7 +55,7 @@ class UserProfile extends \yii\db\ActiveRecord
      */
     public function getUser()
     {
-        return $this->hasOne(User::className(), ['id' => 'user_id']);
+        return $this->hasOne(User::className(), ['id' => 'id']);
     }
 
     public function behaviors()

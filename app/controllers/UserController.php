@@ -84,7 +84,7 @@ class UserController extends Controller
     {
         $model = UserProfile::findOne(Yii::$app->user->id);
         $model = $model ? : new UserProfile([
-            'user_id' => Yii::$app->user->id,
+            'id' => Yii::$app->user->id,
         ]);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['profile']);

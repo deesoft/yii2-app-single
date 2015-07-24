@@ -1,4 +1,5 @@
 <?php
+
 namespace app\models\ar;
 
 use Yii;
@@ -6,6 +7,7 @@ use yii\base\NotSupportedException;
 use yii\behaviors\TimestampBehavior;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
+use mdm\behaviors\ar\ExtendedBehavior;
 
 /**
  * User model
@@ -43,6 +45,10 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             TimestampBehavior::className(),
+            [
+                'class' => ExtendedBehavior::className(),
+                'relationClass' => UserProfile::className(),
+            ]
         ];
     }
 
@@ -97,8 +103,8 @@ class User extends ActiveRecord implements IdentityInterface
         }
 
         return static::findOne([
-            'password_reset_token' => $token,
-            'status' => self::STATUS_ACTIVE,
+                'password_reset_token' => $token,
+                'status' => self::STATUS_ACTIVE,
         ]);
     }
 
@@ -193,6 +199,6 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public function getProfile()
     {
-        return $this->hasOne(UserProfile::className(), ['user_id'=>'id']);
+        return $this->hasOne(UserProfile::className(), ['id' => 'id']);
     }
 }

@@ -28,12 +28,12 @@ class m130524_201442_init extends Migration
             ], $tableOptions);
 
         $this->createTable('{{%user_profile}}', [
-            'user_id' => Schema::TYPE_INTEGER,
+            'id' => Schema::TYPE_INTEGER,
             'fullname' => Schema::TYPE_STRING . ' NOT NULL',
             'photo_id'=> Schema::TYPE_INTEGER,
 
-            'PRIMARY KEY ([[user_id]])',
-            'FOREIGN KEY ([[user_id]]) REFERENCES {{%user}} ([[id]]) ON DELETE CASCADE ON UPDATE CASCADE',
+            'PRIMARY KEY ([[id]])',
+            'FOREIGN KEY ([[id]]) REFERENCES {{%user}} ([[id]]) ON DELETE CASCADE ON UPDATE CASCADE',
             ], $tableOptions);
     }
 
