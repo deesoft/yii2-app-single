@@ -2,7 +2,6 @@
 return [
     'dee.migration.path' => [
         '@mdm/admin/migrations',
-        '@mdm/autonumber/migrations',
     ],
     'migration.rbac' => [
 //        'itemTable' => '{{%auth_item}}',

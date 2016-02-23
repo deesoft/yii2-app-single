@@ -1,13 +1,13 @@
 <?php
 
 use yii\helpers\Html;
-use dee\adminlte\AdminlteAsset;
+use app\assets\AdminLteAsset;
 use yii\widgets\Breadcrumbs;
 
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-AdminlteAsset::register($this);
+AdminLteAsset::register($this);
 $breadcrumbs = isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [];
 ?>
 <?php $this->beginPage() ?>

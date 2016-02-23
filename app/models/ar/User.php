@@ -45,10 +45,6 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             TimestampBehavior::className(),
-            [
-                'class' => ExtendedBehavior::className(),
-                'relationClass' => UserProfile::className(),
-            ]
         ];
     }
 

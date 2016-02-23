@@ -1,7 +1,7 @@
 <?php
 
 use yii\web\View;
-use dee\adminlte\SideNav;
+use app\widgets\SideNav;
 use yii\helpers\ArrayHelper;
 
 //use yii\helpers\Html;
