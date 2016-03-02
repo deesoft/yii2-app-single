@@ -56,6 +56,6 @@ jQuery('#{$id}').change(function(){
     });
 });
 JS;
-        Yii::$app->getView()->registerJs($js);
+        $this->getView()->registerJs($js);
     }
 }
