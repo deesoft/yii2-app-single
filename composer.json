@@ -20,7 +20,7 @@
         "mdmsoft/yii2-upload-file": "~1.0",
         "mdmsoft/yii2-ar-behaviors": "~1.0",
         "rmrevin/yii2-fontawesome": "~2.0",
-        "bower-asset/adminlte": "*"
+        "almasaeed2010/adminlte": "~2.0"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "~2.0",

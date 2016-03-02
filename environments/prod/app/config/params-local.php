@@ -1,7 +1,6 @@
 <?php
 return [
     'dee.migration.path' => [
-        '@mdm/admin/migrations',
     ],
     'migration.rbac' => [
 //        'itemTable' => '{{%auth_item}}',
