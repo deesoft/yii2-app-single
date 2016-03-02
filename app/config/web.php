@@ -10,6 +10,14 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\controllers',
     'components' => [
+        'view' => [
+            'theme' => [
+                'class' => 'themes\\Theme',
+                'themes' => [
+                    'adminlte' => '@themes/adminlte',
+                ]
+            ]
+        ],
         'user' => [
             'identityClass' => 'app\models\ar\User',
             'loginUrl' => ['user/login'],
@@ -27,8 +35,8 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        'authManager'=>[
-            'class'=>'yii\rbac\DbManager',
+        'authManager' => [
+            'class' => 'yii\rbac\DbManager',
         ]
     ],
     'params' => $params,

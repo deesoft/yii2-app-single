@@ -5,7 +5,6 @@
  * @copyright Copyright (c) 2008 Yii Software LLC
  * @license http://www.yiiframework.com/license/
  */
-use yii\db\Schema;
 use yii\helpers\ArrayHelper;
 
 /**
@@ -34,38 +33,38 @@ class m140506_102106_rbac_init extends \yii\db\Migration
         }
 
         $this->createTable($tableNames['ruleTable'], [
-            'name' => Schema::string(64)->notNull(),
-            'data' => Schema::text(),
-            'created_at' => Schema::integer(),
-            'updated_at' => Schema::integer(),
+            'name' => $this->string(64)->notNull(),
+            'data' => $this->text(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
             'PRIMARY KEY (name)',
             ], $tableOptions);
 
         $this->createTable($tableNames['itemTable'], [
-            'name' => Schema::string(64)->notNull(),
-            'type' => Schema::integer()->notNull(),
-            'description' => Schema::text(),
-            'rule_name' => Schema::string(64),
-            'data' => Schema::text(),
-            'created_at' => Schema::integer(),
-            'updated_at' => Schema::integer(),
+            'name' => $this->string(64)->notNull(),
+            'type' => $this->integer()->notNull(),
+            'description' => $this->text(),
+            'rule_name' => $this->string(64),
+            'data' => $this->text(),
+            'created_at' => $this->integer(),
+            'updated_at' => $this->integer(),
             'PRIMARY KEY (name)',
             'FOREIGN KEY (rule_name) REFERENCES ' . $tableNames['ruleTable'] . ' (name) ON DELETE SET NULL ON UPDATE CASCADE',
             ], $tableOptions);
         $this->createIndex('idx-auth_item-type', $tableNames['itemTable'], 'type');
 
         $this->createTable($tableNames['itemChildTable'], [
-            'parent' => Schema::string(64)->notNull(),
-            'child' => Schema::string(64)->notNull(),
+            'parent' => $this->string(64)->notNull(),
+            'child' => $this->string(64)->notNull(),
             'PRIMARY KEY (parent, child)',
             'FOREIGN KEY (parent) REFERENCES ' . $tableNames['itemTable'] . ' (name) ON DELETE CASCADE ON UPDATE CASCADE',
             'FOREIGN KEY (child) REFERENCES ' . $tableNames['itemTable'] . ' (name) ON DELETE CASCADE ON UPDATE CASCADE',
             ], $tableOptions);
 
         $this->createTable($tableNames['assignmentTable'], [
-            'item_name' => Schema::string(64)->notNull(),
-            'user_id' => Schema::string(64)->notNull(),
-            'created_at' => Schema::integer(),
+            'item_name' => $this->string(64)->notNull(),
+            'user_id' => $this->string(64)->notNull(),
+            'created_at' => $this->integer(),
             'PRIMARY KEY (item_name, user_id)',
             'FOREIGN KEY (item_name) REFERENCES ' . $tableNames['itemTable'] . ' (name) ON DELETE CASCADE ON UPDATE CASCADE',
             ], $tableOptions);

@@ -86,8 +86,17 @@ class UserController extends Controller
         $model = $model ? : new UserProfile([
             'id' => Yii::$app->user->id,
         ]);
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['profile']);
+        if ($model->load(Yii::$app->request->post())) {
+            $transaction = Yii::$app->db->beginTransaction();
+            try {
+                if($model->save()){
+                    $transaction->commit();
+                    return $this->redirect(['profile']);
+                }
+            } catch (\Exception $exc) {
+                $model->addError('', $exc->getMessage());
+            }
+            $transaction->rollBack();
         }
         return $this->render('update-profile', [
                 'model' => $model,
