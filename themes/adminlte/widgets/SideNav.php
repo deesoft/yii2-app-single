@@ -7,7 +7,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use rmrevin\yii\fontawesome\FA;
-use app\assets\AdminLteAsset;
+use themes\adminlte\assets\AdminLteAsset;
 use yii\base\InvalidConfigException;
 
 /**

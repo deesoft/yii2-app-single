@@ -13,6 +13,7 @@ return [
         'view' => [
             'theme' => [
                 'class' => 'themes\\Theme',
+                'default' => 'adminlte',
                 'themes' => [
                     'adminlte' => '@themes/adminlte',
                 ]
