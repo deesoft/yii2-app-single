@@ -12,5 +12,9 @@ return [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@app/mail',
         ],
+        'cache' => [
+            'class' => 'yii\caching\DbCache',
+            //'db' => ['dsn' => 'sqlite:@runtime/cache.sqlite']
+        ],
     ],
 ];
