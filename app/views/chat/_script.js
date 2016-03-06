@@ -4,7 +4,7 @@ var notifCount = 0;
 sse.addEventListener('chat', function (e) {
     var data = JSON.parse(e.data);
     var msgs = data.msgs;
-    console.log(data.count + ' message(s) @ ' + data.time);
+    //console.log(data.count + ' message(s) @ ' + data.time);
     var newmsg = 0;
     jQuery.each(msgs, function () {
         var msg = this;
