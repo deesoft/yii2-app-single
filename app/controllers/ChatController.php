@@ -40,12 +40,14 @@ class ChatController extends Controller
 
     public function actionChat()
     {
+        Yii::beginProfile('chat');
         Yii::$app->getResponse()->format = 'json';
         Yii::$app->getDb()->createCommand()->insert('{{%chat}}', [
             'time' => microtime(true),
             'user_id' => Yii::$app->getUser()->id,
             'text' => Yii::$app->getRequest()->post('chat', '')
         ])->execute();
+        Yii::endProfile('chat');
         return true;
     }
 
@@ -81,6 +83,7 @@ class ChatController extends Controller
             sleep(1);
         }
         $sse->id($lastTime);
+        $sse->flush();
         exit();
     }
 }
