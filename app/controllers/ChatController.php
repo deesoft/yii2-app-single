@@ -41,11 +41,6 @@ class ChatController extends Controller
     public function actionChat()
     {
         Yii::$app->getResponse()->format = 'json';
-        if (mt_rand(0, 100) < 5) {
-            Yii::$app->getDb()->createCommand()
-                ->delete('{{%chat}}', ['<', 'time', microtime() - 3 * 24 * 3600])
-                ->execute();
-        }
         Yii::$app->getDb()->createCommand()->insert('{{%chat}}', [
             'time' => microtime(true),
             'user_id' => Yii::$app->getUser()->id,
