@@ -12,5 +12,9 @@ return [
                 'page/<view:\w+>'=>'site/page',
             ],
         ],
+        'session' => [
+            'class' => 'yii\web\DbSession',
+            //'db' => ['dsn' => 'sqlite:@runtime/session.sqlite']
+        ]
     ],
 ];

@@ -17,5 +17,9 @@ return [
             // for the mailer to send real emails.
             'useFileTransport' => true,
         ],
+        'cache' => [
+            'class' => 'yii\caching\DbCache',
+            //'db' => ['dsn' => 'sqlite:@runtime/cache.sqlite']
+        ],
     ],
 ];
