@@ -515,12 +515,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/deesoft/yii2-console.git",
-                "reference": "b635bfa1874fb35fc2b2208f80823b041d52b13a"
+                "reference": "4e043f668ef2894464f1f7c4e37bea4e23aac468"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deesoft/yii2-console/zipball/b635bfa1874fb35fc2b2208f80823b041d52b13a",
-                "reference": "b635bfa1874fb35fc2b2208f80823b041d52b13a",
+                "url": "https://api.github.com/repos/deesoft/yii2-console/zipball/4e043f668ef2894464f1f7c4e37bea4e23aac468",
+                "reference": "4e043f668ef2894464f1f7c4e37bea4e23aac468",
                 "shasum": ""
             },
             "require": {
@@ -555,7 +555,7 @@
                 "migration",
                 "yii2"
             ],
-            "time": "2016-02-22 03:00:49"
+            "time": "2016-03-06 02:25:46"
         },
         {
             "name": "deesoft/yii2-handsontable",
@@ -1268,12 +1268,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/deesoft/yii2-gii.git",
-                "reference": "82b47113bbc58094bff44aa1f906d3df1a0a8b8d"
+                "reference": "caa7c9e66dca22f2624efadab575814f9551056a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/deesoft/yii2-gii/zipball/82b47113bbc58094bff44aa1f906d3df1a0a8b8d",
-                "reference": "82b47113bbc58094bff44aa1f906d3df1a0a8b8d",
+                "url": "https://api.github.com/repos/deesoft/yii2-gii/zipball/caa7c9e66dca22f2624efadab575814f9551056a",
+                "reference": "caa7c9e66dca22f2624efadab575814f9551056a",
                 "shasum": ""
             },
             "require": {
@@ -1306,7 +1306,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-09-05 07:05:06"
+            "time": "2016-03-05 17:56:59"
         },
         {
             "name": "fzaninotto/faker",
