@@ -38,7 +38,10 @@ return [
         ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
-        ]
+        ],
+        'session' => [
+            'class' => 'yii\web\DbSession'
+        ],
     ],
     'params' => $params,
 ];
