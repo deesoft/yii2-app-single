@@ -7,29 +7,30 @@ use yii\helpers\Html;
 /* @var $this View */
 $this->title = 'Simple Chat';
 ?>
-<h1>chat/index</h1>
 <div class="row">
-    <div class="col-lg-6">
-        <div class="box box-primary direct-chat direct-chat-primary">
-            <div class="box-header with-border">
-                <h3 class="box-title">Simple Chat</h3>
+    <div class="box box-primary direct-chat direct-chat-primary">
+        <div class="box-header with-border">
+            <h3 class="box-title">Simple Chat</h3>
+            <div class="box-tools pull-right">
+                <span data-toggle="tooltip" title="" class="badge bg-red" id="msg-notif"></span>
             </div>
-            <div class="box-body">
-                <div class="direct-chat-messages" id="message-container">
+        </div>
+        <div class="box-body">
+            <div class="direct-chat-messages" id="message-container">
 
-                </div>
             </div>
-            <div class="box-footer">
-                <div class="input-group">
-                    <input type="text" id="inp-chat" placeholder="Type Message ..." class="form-control">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary btn-flat" id="btn-chat">Send</button>
-                    </span>
-                </div>
+        </div>
+        <div class="box-footer">
+            <div class="input-group">
+                <input type="text" id="inp-chat" placeholder="Type Message ..." class="form-control">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary btn-flat" id="btn-chat">Send</button>
+                </span>
             </div>
         </div>
     </div>
 </div>
+
 <?php $this->beginBlock('template_you') ?>
 <div class="direct-chat-msg">
     <div class="direct-chat-info clearfix">
