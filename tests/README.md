@@ -45,12 +45,6 @@ After creating and setting up the advanced application, follow these steps to pr
    cd app
    codecept build
    codecept run
-   
-   # backend tests
-   
-   cd backend
-   codecept build
-   codecept run
     
    # etc.
    ```

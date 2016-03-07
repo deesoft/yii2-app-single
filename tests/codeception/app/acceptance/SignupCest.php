@@ -3,7 +3,7 @@
 namespace tests\codeception\app\acceptance;
 
 use tests\codeception\app\_pages\SignupPage;
-use common\models\User;
+use app\models\ar\User;
 
 class SignupCest
 {
