@@ -1,4 +1,6 @@
 <?php
+$_db = is_file(__DIR__ . '/db-local.php') ? require(__DIR__ . '/db-local.php') : [];
+
 /**
  * Application configuration shared by all applications and test types
  */
@@ -13,9 +15,9 @@ return [
         ],
     ],
     'components' => [
-        'db' => [
-            'dsn' => 'mysql:host=localhost;dbname=yii2_advanced_tests',
-        ],
+        'db' => array_merge([
+            'dsn' => 'sqlite:' . dirname(__DIR__) . '/_output/data.sqlite',
+            ], $_db),
         'mailer' => [
             'useFileTransport' => true,
         ],

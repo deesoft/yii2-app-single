@@ -4,8 +4,8 @@ defined('YII_ENV') or define('YII_ENV', 'test');
 
 defined('YII_APP_BASE_PATH') or define('YII_APP_BASE_PATH', dirname(dirname(dirname(__DIR__))));
 
-defined('FRONTEND_ENTRY_URL') or define('FRONTEND_ENTRY_URL', parse_url(\Codeception\Configuration::config()['config']['test_entry_url'], PHP_URL_PATH));
-defined('FRONTEND_ENTRY_FILE') or define('FRONTEND_ENTRY_FILE', YII_APP_BASE_PATH . '/app/web/index-test.php');
+defined('APP_ENTRY_URL') or define('APP_ENTRY_URL', parse_url(\Codeception\Configuration::config()['config']['test_entry_url'], PHP_URL_PATH));
+defined('APP_ENTRY_FILE') or define('APP_ENTRY_FILE', YII_APP_BASE_PATH . '/app/web/index-test.php');
 
 require_once(YII_APP_BASE_PATH . '/vendor/autoload.php');
 require_once(YII_APP_BASE_PATH . '/vendor/yiisoft/yii2/Yii.php');
@@ -15,8 +15,8 @@ require_once(YII_APP_BASE_PATH . '/app/config/bootstrap-local.php');
 // set correct script paths
 
 // the entry script file path for functional and acceptance tests
-$_SERVER['SCRIPT_FILENAME'] = FRONTEND_ENTRY_FILE;
-$_SERVER['SCRIPT_NAME'] = FRONTEND_ENTRY_URL;
+$_SERVER['SCRIPT_FILENAME'] = APP_ENTRY_FILE;
+$_SERVER['SCRIPT_NAME'] = APP_ENTRY_URL;
 $_SERVER['SERVER_NAME'] =  parse_url(\Codeception\Configuration::config()['config']['test_entry_url'], PHP_URL_HOST);
 $_SERVER['SERVER_PORT'] =  parse_url(\Codeception\Configuration::config()['config']['test_entry_url'], PHP_URL_PORT) ?: '80';
 

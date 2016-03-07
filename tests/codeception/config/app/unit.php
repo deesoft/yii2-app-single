@@ -4,8 +4,8 @@
  * Application configuration for app unit tests
  */
 return yii\helpers\ArrayHelper::merge(
-    require(YII_APP_BASE_PATH . '/common/config/main.php'),
-    require(YII_APP_BASE_PATH . '/common/config/main-local.php'),
+    require(YII_APP_BASE_PATH . '/app/config/main.php'),
+    require(YII_APP_BASE_PATH . '/app/config/main-local.php'),
     require(YII_APP_BASE_PATH . '/app/config/web.php'),
     require(YII_APP_BASE_PATH . '/app/config/web-local.php'),
     require(dirname(__DIR__) . '/config.php'),
