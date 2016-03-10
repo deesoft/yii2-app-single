@@ -19,6 +19,7 @@ class AdminLteAsset extends AssetBundle
         'js/app.min.js',
     ];
     public $depends = [
+        'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
         'rmrevin\yii\fontawesome\AssetBundle'
     ];
