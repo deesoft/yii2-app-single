@@ -8,9 +8,9 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || $_SERVER['PHP_AUTH_USER'] !== MY_USER |
     exit;
 }
 
-function execute($env)
+function execute($env, $overwrite)
 {
-    $_SERVER['argv'] = ['', "--env={$env}", '--overwrite=n'];
+    $_SERVER['argv'] = ['', "--env={$env}", "--overwrite={$overwrite}"];
     ob_start();
     ob_implicit_flush();
     require __DIR__ . '/init';
@@ -18,7 +18,7 @@ function execute($env)
     exit();
 }
 if (isset($_POST['action']) && $_POST['action'] == 'install') {
-    execute($_POST['env']);
+    execute($_POST['env'], $_POST['env'] ? 'a' : 'n');
 }
 ?>
 <html>
@@ -30,7 +30,8 @@ if (isset($_POST['action']) && $_POST['action'] == 'install') {
     </head>
     <body>
         <div>
-            Env:<input type="text" id="env">
+            Env:<input type="text" id="env"><br>
+            Overwrite:<input type="checkbox" id="overwrite" value="1"><br>
             <button id="btn">Install</button>
         </div>
         <div id="result">
@@ -42,6 +43,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'install') {
                     $.post(window.location.href, {
                         action: 'install',
                         env: $('#env').val(),
+                        overwrite: $('#overwrite').val(),
                     }, function (r) {
                         $('#result').html(r);
                     });

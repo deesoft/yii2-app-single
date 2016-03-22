@@ -6,7 +6,7 @@ $config = [
             'cookieValidationKey' => '',
         ],
         'urlManager' => [
-            'enablePrettyUrl' => true,
+            //'enablePrettyUrl' => true,
             //'showScriptName' => false,
             'rules' => [
                 'page/<view:\w+>'=>'site/page',
@@ -14,7 +14,7 @@ $config = [
         ],
         'session' => [
             'class' => 'yii\web\DbSession',
-            //'db' => ['dsn' => 'sqlite:@runtime/session.sqlite']
+            'db' => ['dsn' => 'sqlite:@runtime/session.sqlite']
         ]
     ],
 ];
