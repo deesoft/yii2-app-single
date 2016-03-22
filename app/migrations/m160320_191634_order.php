@@ -23,7 +23,7 @@ class m160320_191634_order extends Migration
             'order_id'=>  $this->integer()->notNull(),
             'product'=>  $this->string(64)->notNull(),
             'qty' => $this->integer()->notNull(),
-            'FOREIGN KEY (order_id) REFERENCES {{%order}} (id) ON DELETE SET NULL ON UPDATE CASCADE'
+            'FOREIGN KEY (order_id) REFERENCES {{%order}} (id) ON DELETE CASCADE ON UPDATE CASCADE'
             ], $tableOptions);
     }
 
